@@ -1,9 +1,9 @@
 import React from 'react';
 import { createStructuredSelector } from "reselect";
-import { selectShops } from "../../redux/shop/shop.selectors";
 import { connect } from 'react-redux';
 import CollectionOverview from "../collection-overview/collection-overview.component";
 import { Route } from 'react-router-dom';
+import { selectCollectionsOverview } from '../../redux/shop/shop.selectors';
 import CollectionPage from "../collection/collection-page.component";
 
 const ShopPage = ({match}) => {
@@ -15,8 +15,8 @@ const ShopPage = ({match}) => {
   );
 };
 
-const mapStateToProps = createStructuredSelector({
-  collections: selectShops
-});
+// const mapStateToProps = createStructuredSelector({
+//   collections: selectCollectionsOverview
+// });
 
-export default connect(mapStateToProps)(ShopPage);
+export default connect()(ShopPage);
