@@ -1,5 +1,5 @@
 import cartType from "./cart.types";
-import { addItemToCart, removeItemToCart } from './cart.utils';
+import { addItemToCart, removeItemToCart } from "./cart.utils";
 
 const INIT_STATE = {
   hidden: true,
@@ -26,7 +26,9 @@ const cartReducers = (state = INIT_STATE, action) => {
     case cartType.CLEAR_GROUP_ITEM:
       return {
         ...state,
-        cartItems: state.cartItems.filter(cartItem => cartItem.id !== action.payload.id)
+        cartItems: state.cartItems.filter(
+          cartItem => cartItem.id !== action.payload.id
+        )
       };
     default:
       return state;
@@ -34,4 +36,3 @@ const cartReducers = (state = INIT_STATE, action) => {
 };
 
 export default cartReducers;
-
