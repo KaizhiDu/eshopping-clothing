@@ -1,8 +1,20 @@
 import { userTypes } from './user.types';
 
-export const setCurrentUser = user => ({
-    type: userTypes.SET_CURRENT_USER,
-    payload: user
+export const signOutStart = () => ({
+    type: userTypes.SIGN_OUT_START
+});
+
+export const signOutSuccess = () => ({
+    type: userTypes.SIGN_OUT_SUCCESS
+});
+
+export const signOutFailure = (error) => ({
+    type: userTypes.SIGN_OUT_SUCCESS,
+    payload: error
+});
+
+export const checkUserSession = () => ({
+    type: userTypes.CHECK_USER_SESSION,
 });
 
 export const googleSignInStart = () => ({

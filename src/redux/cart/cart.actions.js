@@ -18,3 +18,11 @@ export const clearGroupItems = item => ({
     type: cartType.CLEAR_GROUP_ITEM,
     payload: item
 });
+
+export const clearCartStart = ()  => ({
+    type: cartType.CLEAR_CART_START
+});
+
+export const clearCartSuccess = ()  => ({
+    type: cartType.CLEAR_CART_SUCCESS
+});

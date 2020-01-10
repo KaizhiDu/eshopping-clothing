@@ -7,11 +7,7 @@ const INIT_STATE = {
 
 const userReducers = (state = INIT_STATE, action) => {
   switch (action.type) {
-    case userTypes.SET_CURRENT_USER:
-      return {
-        ...state,
-        currentUser: action.payload
-      };
+    //case userTypes.CHECK_USER_SESSION:
     case userTypes.GOOGLE_SIGN_IN_SUCCESS:
     case userTypes.EMAIL_SIGN_IN_SUCCESS:
       return {
@@ -21,9 +17,16 @@ const userReducers = (state = INIT_STATE, action) => {
       };
     case userTypes.EMAIL_SIGN_IN_FAILURE:
     case userTypes.GOOGLE_SIGN_IN_FAILURE:
+    case userTypes.SIGN_OUT_FAILURE:
       return {
         ...state,
         error: action.payload
+      };
+    case userTypes.SIGN_OUT_SUCCESS:
+      return {
+        ...state,
+        currentUser: null,
+        error: null
       };
     default:
       return state;
